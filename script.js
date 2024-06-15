@@ -3,7 +3,7 @@ function updateValue(id) {
     document.getElementById(id + 'Value').textContent = value;
 }
 
-function saveData() {
+function saveData(time) {
     const mood = document.getElementById('mood').value;
     const confidence = document.getElementById('confidence').value;
     const nervousness = document.getElementById('nervousness').value;
@@ -12,7 +12,8 @@ function saveData() {
         mood,
         confidence,
         nervousness,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        time // Salva se é "before" ou "after"
     };
 
     let records = JSON.parse(localStorage.getItem('moodRecords')) || [];
@@ -24,6 +25,13 @@ function saveData() {
     updateValue('confidence');
     updateValue('nervousness');
     showFeedback();
+
+    // Não recarrega a página aqui
+}
+
+function concludeLesson() {
+    // Recarregar a página para atualizar os gráficos
+    location.reload();
 }
 
 function showFeedback() {
