@@ -50,7 +50,7 @@ function showFeedback() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Humor',
+                label: 'Felicidade',
                 data: moodData,
                 borderColor: 'blue',
                 borderWidth: 1,
@@ -78,7 +78,7 @@ function showFeedback() {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Nervosismo',
+                label: 'Serenidade',
                 data: nervousnessData,
                 borderColor: 'red',
                 borderWidth: 1,
